@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editNote"
         android:text="Microsoft introduced Multi-Tool Notepad, a mouse-based text editor"
+        android:isScrollContainer="true"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
