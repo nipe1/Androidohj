@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private String getTextFieldText() {
-        EditText editor = findViewById(R.id.call);
+        EditText editor = findViewById(R.id.website);
         String text = editor.getText().toString();
         editor.setText(null);
         return text;
@@ -36,13 +36,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(callIntent);
         }
         else if (v.getId() == R.id.map) {
-            Uri location = Uri.parse("geo:3F58+PG Linnanmaa, Oulu");
+            Uri location = Uri.parse("geo:0,0?q=90570+Pentti+kaiteran+katu+1");
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
             startActivity(mapIntent);
         }
         else if (v.getId() == R.id.searchButton) {
-            Uri webpage = Uri.parse(getTextFieldText());
-            Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+            EditText editor = findViewById(R.id.website);
+            String text = editor.getText().toString();
+            Uri webPage = Uri.parse(text);
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, webPage);
             startActivity(webIntent);
         }
     }
